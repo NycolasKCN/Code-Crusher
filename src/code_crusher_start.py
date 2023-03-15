@@ -5,6 +5,7 @@ from SimpleGraphics import *
 from random import randrange, shuffle
 from time import time, sleep
 from math import sin, pi
+from random import randint
 from copy import deepcopy
 from pprint import pprint
 import inspect
@@ -38,7 +39,13 @@ LOSE = -1
 #
 #  Insert your implementation of createBoard here
 #
+def createBoard(rows, collumns, num_rod):
+  board = [[-1 for _ in range(collumns)] for _ in range(rows)]
+  for row in range(rows):
+    for collumn in range(collumns):
+      board[row][collumn] = randint(0, num_rod-1)
 
+  return board
 #
 #  Modify the board by swapping two pieces.
 #
