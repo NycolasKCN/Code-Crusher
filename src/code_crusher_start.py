@@ -57,7 +57,11 @@ def createBoard(rows, collumns, num_rod):
 #  Returns: None -- the game board passed as a parameter is modified
 #
 def swap(board, r1, c1, r2, c2):
+  guarda=board[r1][c1]
+  board[r1][c1]= board[r2][c2]
+  board[r2][c2]= guarda
   pass
+  
 
 #
 #  Modify the board to clear all occurences of a given piece, replacing them
