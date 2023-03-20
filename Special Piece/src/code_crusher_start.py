@@ -74,6 +74,9 @@ def clearAll(board, sym):
 #
 
 def swap(board, r1, c1, r2, c2):
+  guarda=board[r1][c1]
+  board[r1][c1]= board[r2][c2]
+  board[r1][c1]= guarda
   pass
 #
 #  Insert your implementations of vLineAt and hLineAt here
