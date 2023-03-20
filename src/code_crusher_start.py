@@ -46,6 +46,7 @@ def createBoard(rows, collumns, num_rod):
       board[row][collumn] = randint(0, num_rod-1)
 
   return board
+
 #
 #  Modify the board by swapping two pieces.
 #
@@ -60,8 +61,6 @@ def swap(board, r1, c1, r2, c2):
   guarda=board[r1][c1]
   board[r1][c1]= board[r2][c2]
   board[r2][c2]= guarda
-  pass
-  
 
 #
 #  Modify the board to clear all occurences of a given piece, replacing them
@@ -74,7 +73,10 @@ def swap(board, r1, c1, r2, c2):
 #  Returns: None -- the game board passed as a parameter is modified
 #
 def clearAll(board, sym):
-  pass
+  for row in range(len(board)):
+    for collumn in range(len(board[row])):
+      if board[row][collumn] == sym:
+        board[row][collumn] = EMPTY
 
 #
 #  Insert your implementations of vLineAt and hLineAt here
