@@ -81,6 +81,33 @@ def clearAll(board, sym):
 #
 #  Insert your implementations of vLineAt and hLineAt here
 #
+def vLineAt(board, r, c):
+  sym = board[r][c]
+  
+  try:
+    if sym == board[r+1][c] and sym == board[r+2][c]:
+      return True
+  except:
+    pass
+  
+  try:
+    prev_row = r-1
+    next_row = r+1
+    if not(prev_row<0):
+      if sym == board[next_row][c] and sym == board[prev_row][c]:
+        return True
+  except:
+    pass
+
+  try:
+    prev_prev_row = r-2
+    prev_row = r-1
+    if not(prev_row<0 and prev_prev_row<0):
+      if sym == board[prev_row][c] and sym == board[prev_prev_row][c]:
+        return True
+  except:
+    pass
+  return False
 
 #
 #  Report whether or not two pieces on the board can be swapped.  The function
@@ -95,6 +122,7 @@ def clearAll(board, sym):
 #  Returns: True if the proposed swap creates a line.  False otherwise.
 #
 def canSwap(board, r1, c1, r2, c2):
+
   return True
 
 #
